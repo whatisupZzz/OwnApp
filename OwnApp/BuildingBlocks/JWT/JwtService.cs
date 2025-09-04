@@ -25,7 +25,6 @@ namespace BuildingBlocks.JWT
         ClaimsPrincipal? ValidateToken(string token);
         string? GetUserId(ClaimsPrincipal user);
 
-        // 新增刷新功能
         string GenerateRefreshToken(string userId);
         bool ValidateRefreshToken(string userId, string refreshToken);
     }
@@ -48,7 +47,7 @@ namespace BuildingBlocks.JWT
         {
             var claims = new[]
             {
-            new Claim(JwtRegisteredClaimNames.Sub, userId),
+            new Claim("sub", userId),
             new Claim("Phone", phoneNumber),
         };
 
@@ -117,7 +116,7 @@ namespace BuildingBlocks.JWT
         {
             var token = _refreshTokens.FirstOrDefault(x => x.UserId == userId && x.Token == refreshToken);
             if (token == null) return false;
-            if (token.Expiration < DateTime.UtcNow)
+            if (token.Expiration < DateTime.Now)
             {
                 _refreshTokens.Remove(token);
                 return false;

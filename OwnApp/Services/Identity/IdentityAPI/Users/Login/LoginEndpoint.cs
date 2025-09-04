@@ -19,7 +19,7 @@ namespace IdentityAPI.Users.Login
                 var command = request.Adapt<LoginCommand>();
                 var result = await sender.Send(command);
                 var response = result.Adapt<LoginResponse>();
-                return new { Code = 200, Data = response };
+                return new BaseResponse(response);
             }).WithName("Login");
         }
     }

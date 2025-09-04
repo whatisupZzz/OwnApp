@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace BuildingBlocks.JWT
                             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.SecretKey)),
                             ClockSkew = TimeSpan.Zero
                         };
+                        JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
                     });
            services.AddAuthorization();
             return services;

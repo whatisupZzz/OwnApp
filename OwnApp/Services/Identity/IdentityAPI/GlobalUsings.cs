@@ -6,3 +6,5 @@ global using IdentityAPI.Data.Extensions;
 global using BuildingBlocks.Exceptions;
 global using Carter;
 global using IdentityAPI.Repository.Repo;
+global using BuildingBlocks.CQRS;
+global using MediatR;

@@ -24,7 +24,7 @@ namespace IdentityAPI.Repository.Repo
         public async Task<User> GetUserByUserNameAsync(string userName)
         {
             var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.UserName == userName);
-            return user;
+            return user is null ? throw new UserNotFoundExcpetion(userName) : user;
         }
 
         public async Task<User> CreateUserAsync(string phone, CancellationToken cancellationToken)

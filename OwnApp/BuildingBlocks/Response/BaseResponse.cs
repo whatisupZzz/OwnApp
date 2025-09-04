@@ -14,6 +14,12 @@ namespace BuildingBlocks.Response
         public BaseResponse()
         {
         }
+        public BaseResponse(object data)
+        {
+            this.code = 200;
+            this.message = "success";
+            this.data = data;
+        }
         public BaseResponse(int code, string message)
         {
             this.code = code;

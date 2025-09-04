@@ -11,10 +11,10 @@ namespace IdentityAPI.Users.Login
     public record LoginCommand(string PhoneNumber, string CmsCode) : ICommand<LoginResult>;
     public record LoginResult(string Token, string RefreshToken);
 
-    public class CheckoutLoginCommandValidator
+    public class LoginCommandValidator
     : AbstractValidator<LoginCommand>
     {
-        public CheckoutLoginCommandValidator()
+        public LoginCommandValidator()
         {
             RuleFor(x => x.PhoneNumber).NotNull().WithMessage("请输入手机号");
             RuleFor(x => x.CmsCode).NotEmpty().WithMessage("请输入验证码");
