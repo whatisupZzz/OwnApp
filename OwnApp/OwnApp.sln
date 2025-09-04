@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspire", "Aspire", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6B859538-E5F8-4983-A012-492FDE0D7376}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{38203D4E-3F69-46D3-8965-7C1D21B3EA3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHost.AppHost", "Aspire\AppHost\AppHost.AppHost\AppHost.AppHost.csproj", "{BE1CDE28-CF43-4668-B5F8-E9D8655F2569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHost.ServiceDefaults", "Aspire\AppHost\AppHost.ServiceDefaults\AppHost.ServiceDefaults.csproj", "{544F8252-70BA-B0D7-09BF-166DFF30897E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE1CDE28-CF43-4668-B5F8-E9D8655F2569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE1CDE28-CF43-4668-B5F8-E9D8655F2569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE1CDE28-CF43-4668-B5F8-E9D8655F2569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE1CDE28-CF43-4668-B5F8-E9D8655F2569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544F8252-70BA-B0D7-09BF-166DFF30897E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544F8252-70BA-B0D7-09BF-166DFF30897E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544F8252-70BA-B0D7-09BF-166DFF30897E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544F8252-70BA-B0D7-09BF-166DFF30897E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE1CDE28-CF43-4668-B5F8-E9D8655F2569} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{544F8252-70BA-B0D7-09BF-166DFF30897E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E043DE93-35DA-4432-8C5B-6F3108E571AD}
+	EndGlobalSection
+EndGlobal
