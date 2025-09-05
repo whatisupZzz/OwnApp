@@ -7,5 +7,6 @@ namespace IdentityAPI.Repository.Repo
         Task<User> GetUserByIdAsync(string id);
         Task<User> GetUserByUserNameAsync(string userName);
         Task<User> CreateUserAsync(string phone, CancellationToken cancellationToken);
+        Task<User> UpdateOrInsertUserAsync(string phone,string code, CancellationToken cancellationToken);
     }
 }

@@ -1,0 +1,33 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Notification.Grpc"; 
+
+package Notification.GrpcServer.Protos;
+
+// 短信模板枚举
+enum SmsTemplate {
+  SMS_TEMPLATE_UNKNOWN = 0; // 默认值，防止未设置
+  LOGIN_CODE = 1;           // 登录验证码
+  REGISTER_CODE = 2;        // 注册验证码
+  RESET_PASSWORD = 3;       // 重置密码验证码
+  GENERAL_CODE = 4;         // 通用验证码
+}
+
+// 请求消息：发送短信
+message SendSmsRequest {
+  string phone_number = 1;   // 手机号码
+  SmsTemplate template_id = 2; // 短信模板 ID（枚举）
+}
+
+// 响应消息：发送短信结果
+message SendSmsReply {
+  bool success = 1;          // 是否成功
+  string smsCode = 2;        // 短信码
+  string message_id = 3;     // 短信平台返回的消息 ID
+  string error = 4;          // 错误信息（失败时填写）
+}
+
+// 服务：短信服务
+service NotificationService {
+  rpc SendSms (SendSmsRequest) returns (SendSmsReply);
+}

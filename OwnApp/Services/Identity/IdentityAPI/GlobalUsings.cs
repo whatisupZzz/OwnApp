@@ -8,3 +8,8 @@ global using Carter;
 global using IdentityAPI.Repository.Repo;
 global using BuildingBlocks.CQRS;
 global using MediatR;
+global using BuildingBlocks.Message.PersistMessage;
+global using BuildingBlocks.Web;
+global using FluentValidation;
+global using IdentityAPI;
+global using Notification.Grpc;

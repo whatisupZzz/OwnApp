@@ -1,4 +1,5 @@
 ﻿using Basket.API.Exception;
+using BuildingBlocks.Creator;
 
 namespace IdentityAPI.Repository.Repo
 {
@@ -18,7 +19,7 @@ namespace IdentityAPI.Repository.Repo
         public async Task<User> GetUserByIdAsync(string id)
         {
             var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
-            return  user is null ? throw new UserNotFoundExcpetion(id) : user;
+            return user is null ? throw new UserNotFoundExcpetion(id) : user;
         }
 
         public async Task<User> GetUserByUserNameAsync(string userName)
@@ -33,11 +34,32 @@ namespace IdentityAPI.Repository.Repo
             {
                 Id = Guid.NewGuid().ToString(),
                 PhoneNumber = phone,
-                CreatedAt = DateTime.Now
+                CreatedAt = DateTime.Now,
+                UserName = Creator.CreateTempUserName(),
             };
             await _dbContext.Users.AddAsync(user, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
             return user;
+        }
+
+        public async Task<User> UpdateOrInsertUserAsync(string phone, string code, CancellationToken cancellationToken)
+        {
+            var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.PhoneNumber == phone, cancellationToken);
+            User? newUser;
+            if (user is null)
+            {
+                newUser = await CreateUserAsync(phone, cancellationToken);
+                newUser.CmsCode = code;
+                await _dbContext.SaveChangesAsync(cancellationToken);
+                return newUser;
+            }
+            else
+            {
+                user.CmsCode = code;
+                await _dbContext.SaveChangesAsync(cancellationToken);
+                return user;
+            }
+
         }
     }
 }

@@ -15,6 +15,7 @@ namespace BuildingBlocks.JWT
     {
         public static IServiceCollection AddJwt(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddHttpContextAccessor();
             services.Configure<JwtSettings>(configuration.GetSection("Jwt"));
             services.AddScoped<IJwtService, JwtService>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

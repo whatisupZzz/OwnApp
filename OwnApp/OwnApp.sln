@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspire", "Aspire", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -26,6 +26,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{0EBABAA6-2BA1-474C-93B0-67A0A2347C61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks", "BuildingBlocks\BuildingBlocks.csproj", "{4D8B6B87-1137-4951-B711-EE7949E3715A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationAPI", "Services\Notification\NotificationAPI\NotificationAPI.csproj", "{42096F44-66BE-9DB4-8AA5-E1ADB193529C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification", "Services\Notification\Notification\Notification.csproj", "{96D3BDE2-95C0-413E-81D1-999D1FEE0EAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,14 @@ Global
 		{4D8B6B87-1137-4951-B711-EE7949E3715A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D8B6B87-1137-4951-B711-EE7949E3715A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D8B6B87-1137-4951-B711-EE7949E3715A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42096F44-66BE-9DB4-8AA5-E1ADB193529C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42096F44-66BE-9DB4-8AA5-E1ADB193529C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42096F44-66BE-9DB4-8AA5-E1ADB193529C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42096F44-66BE-9DB4-8AA5-E1ADB193529C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D3BDE2-95C0-413E-81D1-999D1FEE0EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D3BDE2-95C0-413E-81D1-999D1FEE0EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D3BDE2-95C0-413E-81D1-999D1FEE0EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D3BDE2-95C0-413E-81D1-999D1FEE0EAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +78,8 @@ Global
 		{FF379ABC-BF88-4D4E-A41C-6698B93BD15A} = {6B859538-E5F8-4983-A012-492FDE0D7376}
 		{146CA093-29FD-8065-AF1F-779F31DB5CA9} = {CA523753-3743-4B05-B848-228043CEC67F}
 		{4D8B6B87-1137-4951-B711-EE7949E3715A} = {0EBABAA6-2BA1-474C-93B0-67A0A2347C61}
+		{42096F44-66BE-9DB4-8AA5-E1ADB193529C} = {FF379ABC-BF88-4D4E-A41C-6698B93BD15A}
+		{96D3BDE2-95C0-413E-81D1-999D1FEE0EAC} = {FF379ABC-BF88-4D4E-A41C-6698B93BD15A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E043DE93-35DA-4432-8C5B-6F3108E571AD}
