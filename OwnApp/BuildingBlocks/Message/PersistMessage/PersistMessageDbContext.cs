@@ -1,6 +1,7 @@
 using BuildingBlocks.EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Reflection.Emit;
 using IsolationLevel = System.Data.IsolationLevel;
 
 namespace BuildingBlocks.Message.PersistMessage;

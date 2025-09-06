@@ -53,12 +53,14 @@ public static class Extensions
         configure.AddSagaStateMachines(assembly);
         configure.AddSagas(assembly);
         configure.AddActivities(assembly);
+        
         switch (transportType)
         {
             case TransportType.RabbitMq:
                 configure.UsingRabbitMq(
                     (context, configurator) =>
                     {
+
                         var configuration = context.GetRequiredService<IConfiguration>();
 
                         var aspireConnectionString = configuration.GetConnectionString("rabbitmq");
@@ -83,7 +85,7 @@ public static class Extensions
                                     h.Password(rabbitMqOptions.Password);
                                 });
                         }
-
+                        configurator.UseConsumeFilter(typeof(ConsumeFilter<>), context);
                         configurator.ConfigureEndpoints(context);
 
                         configurator.UseMessageRetry(AddRetryConfiguration);
